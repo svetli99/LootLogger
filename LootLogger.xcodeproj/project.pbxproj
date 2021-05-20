@@ -15,11 +15,15 @@
 		0E256DE7261CB2B60045B39F /* LootLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256DE6261CB2B60045B39F /* LootLoggerTests.swift */; };
 		0E256DF2261CB2B60045B39F /* LootLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256DF1261CB2B60045B39F /* LootLoggerUITests.swift */; };
 		0E256E03261CB3F80045B39F /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256E02261CB3F80045B39F /* ItemsViewController.swift */; };
-		0E256E0B261CB55B0045B39F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256E0A261CB55A0045B39F /* Item.swift */; };
+		0E256E0B261CB55B0045B39F /* FlickrItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256E0A261CB55A0045B39F /* FlickrItem.swift */; };
 		0E256E10261CB7A00045B39F /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256E0F261CB7A00045B39F /* ItemStore.swift */; };
 		0E256E1E261F41030045B39F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256E1D261F41030045B39F /* ItemCell.swift */; };
 		0E256ED5262484CC0045B39F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256ED4262484CC0045B39F /* DetailViewController.swift */; };
 		0E256EE026272FC40045B39F /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E256EDF26272FC30045B39F /* ChangeDateViewController.swift */; };
+		7A7C39FE264B097A00D40C68 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7C39FD264B097A00D40C68 /* ImageStore.swift */; };
+		7A7C3A04264BB03300D40C68 /* LootLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A7C3A02264BB03300D40C68 /* LootLogger.xcdatamodeld */; };
+		7A7C3A0A264BB12700D40C68 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7C3A08264BB12700D40C68 /* Item+CoreDataClass.swift */; };
+		7A7C3A0B264BB12700D40C68 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7C3A09264BB12700D40C68 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +58,15 @@
 		0E256DF1261CB2B60045B39F /* LootLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootLoggerUITests.swift; sourceTree = "<group>"; };
 		0E256DF3261CB2B60045B39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E256E02261CB3F80045B39F /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
-		0E256E0A261CB55A0045B39F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0E256E0A261CB55A0045B39F /* FlickrItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrItem.swift; sourceTree = "<group>"; };
 		0E256E0F261CB7A00045B39F /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		0E256E1D261F41030045B39F /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		0E256ED4262484CC0045B39F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0E256EDF26272FC30045B39F /* ChangeDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateViewController.swift; sourceTree = "<group>"; };
+		7A7C39FD264B097A00D40C68 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		7A7C3A03264BB03300D40C68 /* LootLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LootLogger.xcdatamodel; sourceTree = "<group>"; };
+		7A7C3A08264BB12700D40C68 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A7C3A09264BB12700D40C68 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,8 @@
 		0E256DC3261CB2B20045B39F = {
 			isa = PBXGroup;
 			children = (
+				7A7C3A08264BB12700D40C68 /* Item+CoreDataClass.swift */,
+				7A7C3A09264BB12700D40C68 /* Item+CoreDataProperties.swift */,
 				0E256DCE261CB2B20045B39F /* LootLogger */,
 				0E256DE5261CB2B60045B39F /* LootLoggerTests */,
 				0E256DF0261CB2B60045B39F /* LootLoggerUITests */,
@@ -112,15 +122,17 @@
 				0E256DCF261CB2B20045B39F /* AppDelegate.swift */,
 				0E256DD1261CB2B20045B39F /* SceneDelegate.swift */,
 				0E256E02261CB3F80045B39F /* ItemsViewController.swift */,
-				0E256E0A261CB55A0045B39F /* Item.swift */,
+				0E256E0A261CB55A0045B39F /* FlickrItem.swift */,
 				0E256E0F261CB7A00045B39F /* ItemStore.swift */,
 				0E256E1D261F41030045B39F /* ItemCell.swift */,
 				0E256ED4262484CC0045B39F /* DetailViewController.swift */,
 				0E256EDF26272FC30045B39F /* ChangeDateViewController.swift */,
+				7A7C39FD264B097A00D40C68 /* ImageStore.swift */,
 				0E256DD5261CB2B20045B39F /* Main.storyboard */,
 				0E256DD8261CB2B50045B39F /* Assets.xcassets */,
 				0E256DDA261CB2B60045B39F /* LaunchScreen.storyboard */,
 				0E256DDD261CB2B60045B39F /* Info.plist */,
+				7A7C3A02264BB03300D40C68 /* LootLogger.xcdatamodeld */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";
@@ -273,14 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E256E0B261CB55B0045B39F /* Item.swift in Sources */,
+				0E256E0B261CB55B0045B39F /* FlickrItem.swift in Sources */,
 				0E256E10261CB7A00045B39F /* ItemStore.swift in Sources */,
 				0E256E1E261F41030045B39F /* ItemCell.swift in Sources */,
 				0E256E03261CB3F80045B39F /* ItemsViewController.swift in Sources */,
 				0E256EE026272FC40045B39F /* ChangeDateViewController.swift in Sources */,
+				7A7C3A0A264BB12700D40C68 /* Item+CoreDataClass.swift in Sources */,
+				7A7C3A0B264BB12700D40C68 /* Item+CoreDataProperties.swift in Sources */,
+				7A7C39FE264B097A00D40C68 /* ImageStore.swift in Sources */,
 				0E256DD0261CB2B20045B39F /* AppDelegate.swift in Sources */,
 				0E256DD2261CB2B20045B39F /* SceneDelegate.swift in Sources */,
 				0E256ED5262484CC0045B39F /* DetailViewController.swift in Sources */,
+				7A7C3A04264BB03300D40C68 /* LootLogger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +629,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A7C3A02264BB03300D40C68 /* LootLogger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A7C3A03264BB03300D40C68 /* LootLogger.xcdatamodel */,
+			);
+			currentVersion = 7A7C3A03264BB03300D40C68 /* LootLogger.xcdatamodel */;
+			path = LootLogger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0E256DC4261CB2B20045B39F /* Project object */;
 }

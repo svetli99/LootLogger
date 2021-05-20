@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i7B-iu-u3R">
-                                <rect key="frame" x="0.0" y="96" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="709"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-BQ-K3f">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
@@ -148,34 +148,63 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVQ-QW-XkI">
-                                        <rect key="frame" x="0.0" y="126" width="414" height="591"/>
+                                        <rect key="frame" x="0.0" y="126" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-0V-d7S">
-                                        <rect key="frame" x="0.0" y="725" width="414" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="change date"/>
-                                        <connections>
-                                            <segue destination="ThP-ZM-BnJ" kind="show" identifier="changeDate" id="dny-6l-lKx"/>
-                                        </connections>
-                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-dI-wH8">
+                                        <rect key="frame" x="0.0" y="154.5" width="414" height="513.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BrW-Gk-mOC">
+                                        <rect key="frame" x="0.0" y="676" width="414" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFB-0V-d7S">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="change date"/>
+                                                <connections>
+                                                    <segue destination="ThP-ZM-BnJ" kind="show" identifier="changeDate" id="dny-6l-lKx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-D4-aYN">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="clear photo"/>
+                                                <connections>
+                                                    <action selector="clearImage:" destination="S1N-Kz-HYR" eventType="touchUpInside" id="t05-wt-kDO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="XmI-tx-PIl" firstAttribute="leading" secondItem="VAv-6x-IvE" secondAttribute="leading" id="99E-pi-oev"/>
                                     <constraint firstItem="X8A-R1-VIN" firstAttribute="leading" secondItem="XmI-tx-PIl" secondAttribute="leading" id="c7G-0Y-Nib"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMe-7r-bJH">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="uGR-YG-N0L">
+                                        <connections>
+                                            <action selector="choosePhotoSource:" destination="S1N-Kz-HYR" id="8Pz-v0-Rsh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BTq-Ri-dNg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iMe-7r-bJH" secondAttribute="trailing" id="91a-ar-j4w"/>
+                            <constraint firstItem="iMe-7r-bJH" firstAttribute="leading" secondItem="CJV-Mr-UEr" secondAttribute="leading" id="DKm-Ea-BXq"/>
                             <constraint firstItem="i7B-iu-u3R" firstAttribute="top" secondItem="BTq-Ri-dNg" secondAttribute="top" constant="8" id="JBo-tR-xbq"/>
                             <constraint firstItem="i7B-iu-u3R" firstAttribute="leading" secondItem="BTq-Ri-dNg" secondAttribute="leading" id="JdG-4E-2zd"/>
                             <constraint firstItem="BTq-Ri-dNg" firstAttribute="trailing" secondItem="i7B-iu-u3R" secondAttribute="trailing" id="Spw-qp-A3e"/>
-                            <constraint firstItem="BTq-Ri-dNg" firstAttribute="bottom" secondItem="i7B-iu-u3R" secondAttribute="bottom" constant="8" id="ynb-va-YcE"/>
+                            <constraint firstItem="iMe-7r-bJH" firstAttribute="top" secondItem="i7B-iu-u3R" secondAttribute="bottom" constant="8" id="Wav-YI-UhL"/>
+                            <constraint firstItem="BTq-Ri-dNg" firstAttribute="bottom" secondItem="iMe-7r-bJH" secondAttribute="bottom" id="fX6-r3-Zh8"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="NIC-nR-2Az" appends="YES" id="Bvh-JW-Rcv"/>
@@ -183,7 +212,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Nfo-8q-Egr"/>
                     <connections>
+                        <outlet property="clearButton" destination="NWb-D4-aYN" id="nmB-01-PNl"/>
                         <outlet property="dateLabel" destination="sVQ-QW-XkI" id="5Sn-iQ-nJ2"/>
+                        <outlet property="imageView" destination="F6V-dI-wH8" id="i1L-da-3Ou"/>
                         <outlet property="nameField" destination="3s9-PB-Xgx" id="Q0t-15-gBZ"/>
                         <outlet property="serialNumberField" destination="AmG-a6-HmU" id="VhT-a4-BWr"/>
                         <outlet property="valueField" destination="NuP-wA-4tD" id="u17-UV-f0o"/>

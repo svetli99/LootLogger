@@ -14,7 +14,7 @@ class ChangeDateViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        datePicker.date = item.dateCreated
+        datePicker.date = item.dateCreated!
     }
     
     override func viewWillDisappear(_ animated: Bool) {

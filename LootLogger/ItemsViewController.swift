@@ -8,7 +8,8 @@
 import UIKit
 
 class ItemsViewController: UITableViewController {
-    var itemStore: ItemStore!
+    var itemStore = ItemStore.shared
+    var imageStore = ImageStrore.shared
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -49,7 +50,7 @@ class ItemsViewController: UITableViewController {
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "$\(item.valueInDollars)"
-        cell.value = item.valueInDollars
+        cell.value = Int(item.valueInDollars)
         return cell
     }
     
@@ -58,6 +59,7 @@ class ItemsViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemStore.allItems[indexPath.row]
+            imageStore.deleteImage(forKey: item.itemKey!)
             itemStore.removeItem(item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -80,6 +82,7 @@ class ItemsViewController: UITableViewController {
                 let item = itemStore.allItems[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item
+                detailViewController.imageStore = imageStore
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
